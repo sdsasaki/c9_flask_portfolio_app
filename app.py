@@ -48,12 +48,19 @@ def shopping_list_post():
           shop_list = []
           try:
             for item in request.form['text'].split():
-              
               shop_list.append(item)
+	    
+	    sorted_list = sorted(shop_list)
+	
+	    count = 1
+	    my_dict = {}
+            for word in sorted_list:
+	       my_dict.update({word : count})
+  	       count += 1
 
               
               
-            return render_template('shopping_list.html', result="\n".join([str(item) for item in shop_list]))
+            return render_template('shopping_list.html', result=my_dict)
           except ValueError:
             return "Easy now! Let's keep it simple! Just words with a space between them"
           
