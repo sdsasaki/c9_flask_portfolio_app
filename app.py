@@ -51,14 +51,6 @@ def shopping_list_post():
               shop_list.append(item)
 	    
 	    sorted_list = sorted(shop_list)
-	
-	    count = 1
-	    my_dict = {}
-            for word in sorted_list:
-              my_dict.update({word : count})
-              count += 1
-
-              
               
             return render_template('shopping_list.html', result=my_dict)
           except ValueError:
