@@ -52,7 +52,7 @@ def shopping_list_post():
 	    
 	    sorted_list = sorted(shop_list)
               
-            return render_template('shopping_list.html', result=my_dict)
+            return render_template('shopping_list.html', result="\n".join([str(item) for item in sorted_list]))
           except ValueError:
             return "Easy now! Let's keep it simple! Just words with a space between them"
           
