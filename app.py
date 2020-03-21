@@ -55,8 +55,8 @@ def shopping_list_post():
 	    count = 1
 	    my_dict = {}
             for word in sorted_list:
-	       my_dict.update({word : count})
-  	       count += 1
+              my_dict.update({word : count})
+              count += 1
 
               
               
