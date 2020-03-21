@@ -50,7 +50,7 @@ def shopping_list_post():
             for item in request.form['text'].split():
               shop_list.append(item)
 	    
-	    sorted_list = sorted(shop_list)
+            sorted_list = sorted(shop_list)
               
             return render_template('shopping_list.html', result="\n".join([str(item) for item in sorted_list]))
           except ValueError:
